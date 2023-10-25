@@ -1,0 +1,44 @@
+<div *ngIf="artwork" class="row">
+    <div class="col s12 m8 offset-m2">
+    <h2 class="header center">{{ artwork.name }}</h2>
+    <div class="card horizontal hoverable">
+      <div class="card-image">
+        <img [src]="artwork.picture">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <table class="bordered striped">
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><strong>{{ artwork.name }}</strong></td>
+              </tr>
+              <tr>
+                <td>Description</td>
+                <td><strong>{{ artwork.description }}</strong></td>
+              </tr>
+              <tr>
+                <td>Prix</td>
+                <td><strong>{{ artwork.price }}</strong></td>
+              </tr>
+              <tr>
+                <td>Category</td>
+                <td>
+                  <span *ngFor="let category of artwork.category">{{ category }}</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Date de création</td>
+                <td><em>{{ artwork.created | date:"dd/MM/yyyy" }}</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-action">
+          <a (click)="goToArtworkList()">Retour</a>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <h4 *ngIf='!artwork' class="center">Aucune oeuvre à afficher !</h4>

@@ -1,0 +1,19 @@
+<div class="container" role="main">
+    <h2 class="center">Welcome</h2>
+    <div class="row">
+        <div *ngFor="let artwork of artworkList" class="col m4 s6">
+            <div (click)="goToArtwork(artwork)" class="card horizontal hoverable">
+                <div  class="card-image">
+                    <img [src]="artwork.picture" />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-cont">
+                        <p>{{ artwork.name }}</p>
+                        <p><small>{{ artwork.created | date: "medium" }}</small></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
