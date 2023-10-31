@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, FormStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { ListArtworkComponent } from 'src/app/components/list-artwork/list-artwork.component';
 import { DetailArtworkComponent } from 'src/app/components/detail-artwork/detail-artwork.component';
 import { BorderCardDirective } from 'src/app/directives/border-card.directive';
@@ -8,8 +8,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ArtworkService } from 'src/app/services/artwork.service';
 import { FormsModule } from '@angular/forms';
 import { ArtworkFormComponent } from 'src/app/components/artwork-form/artwork-form.component';
+import { EditArtworkComponent } from 'src/app/components/edit-artwork/edit-artwork.component';
 
 const artworkroutes: Routes = [
+    { path: 'edit/artwork/:id', component:  EditArtworkComponent},
     { path: 'artworks', component:  ListArtworkComponent},
     { path: 'artwork/:id', component:  DetailArtworkComponent},
 ];
@@ -19,6 +21,7 @@ const artworkroutes: Routes = [
     ListArtworkComponent,
     DetailArtworkComponent,
     ArtworkFormComponent,
+    EditArtworkComponent,
     BorderCardDirective,
     HoverCardDirective
   ],

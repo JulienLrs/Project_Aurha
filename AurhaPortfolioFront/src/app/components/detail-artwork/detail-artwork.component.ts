@@ -5,8 +5,7 @@ import { ArtworkService } from 'src/app/services/artwork.service';
 
 @Component({
   selector: 'app-detail-artwork',
-  templateUrl: './detail-artwork.component.html',
-  providers: [ ArtworkService ]
+  templateUrl: './detail-artwork.component.html'
 })
 
 export class DetailArtworkComponent implements OnInit{
@@ -32,5 +31,9 @@ export class DetailArtworkComponent implements OnInit{
 
   goToArtworkList() {
     this.router.navigate(['/artworks']);
+  }
+
+  goToEditArtwotk(artwork: Artwork) {
+    this.router.navigate(['/edit/artwork', artwork.id]);
   }
 }

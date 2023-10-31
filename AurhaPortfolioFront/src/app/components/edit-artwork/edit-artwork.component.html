@@ -1,0 +1,5 @@
+<h2 class="center">Editer {{ artwork?.name }}</h2>
+<p *ngIf="artwork" class="center">
+    <img [src]="artwork.picture" />
+</p>
+<app-artwork-form *ngIf="artwork" [artwork]="artwork"></app-artwork-form>

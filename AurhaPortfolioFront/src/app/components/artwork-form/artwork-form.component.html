@@ -2,80 +2,59 @@
   <div class="row">
     <div class="col s8 offset-s2">
       <div class="card-panel">
-  
-        <!-- Pokemon name -->
+
+
+        <!-- name -->
         <div class="form-group">
           <label for="name">Nom</label>
-          <input type="text" class="form-control" id="name"
-                  required
-                  pattern="^[a-zA-Z0-9àéèç]{1,25}$"
-                 [(ngModel)]="artwork.name" name="name"
-                 #name="ngModel">
-  
-          <div [hidden]="name.valid || name.pristine"
-                class="card-panel red accent-1">
-                Le nom du pokémon est requis (1-25).
+
+          <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9àéèç\s]{1,100}$"
+            [(ngModel)]="artwork.name" name="name" #name="ngModel">
+
+          <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+            Le nom de l'oeuvre est requis (1-100).
           </div>
         </div>
-  
-        <!-- Pokemon description -->
+
+        <!-- description -->
         <div class="form-group">
           <label for="description">Description</label>
-          <input type="number" class="form-control" id="description"
-                  required
-                  pattern="^[0-9]{1,3}$"
-                 [(ngModel)]="artwork.description" name="description"
-                 #description="ngModel">
-           <div [hidden]="description.valid || description.pristine"
-                 class="card-panel red accent-1">
-                 Les points de vie du pokémon sont compris entre 0 et 999.
-           </div>
+          <input type="text" class="form-control" id="description" required pattern="^[a-zA-Z0-9àéèç\s]{1,100}$"
+            [(ngModel)]="artwork.description" name="description" #description="ngModel">
+          <div [hidden]="description.valid || description.pristine" class="card-panel red accent-1">
+            Cette description n'est pas valide (1-100).
+          </div>
         </div>
-  
-        <!-- Pokemon cp -->
+
+        <!--  price -->
         <div class="form-group">
           <label for="price">Price</label>
-          <input type="number" class="form-control" id="price"
-                  required
-                  pattern="^[0-9]{1,2}$"
-                 [(ngModel)]="artwork.price" name="price"
-                 #price="ngModel">
-           <div [hidden]="price.valid || price.pristine"
-                 class="card-panel red accent-1">
-                 Les dégâts du pokémon sont compris entre 0 et 99.
-           </div>
+          <input type="number" class="form-control" id="price" required pattern="^[0-9]{1,5}$"
+            [(ngModel)]="artwork.price" name="price" #price="ngModel">
+          <div [hidden]="price.valid || price.pristine" class="card-panel red accent-1">
+            Le prix de l'oeuvre doit être compris entre 1 et 10000.
+          </div>
         </div>
-  
-        <!-- Pokemon types -->
+
+        <!--  categories -->
         <form class="form-group">
-          <label for="types">Types</label>
-          <p *ngFor="let type of types">
+          <label for="category">Categories</label>
+          <p *ngFor="let categories of category">
             <label>
-              <input type="checkbox"
-                class="filled-in"
-                id="{{ type }}"
-                [value]="type"
-                [checked]="hasType(type)"
-                [disabled]="!isTypesValid(type)"
-                (change)="selectType($event, type)"/>
-              <span [attr.for]="type">
-                <div class="{{ type | artworkTypeColor }}">
-                  {{ type }}
-                </div>
-              </span>
+              <input type="checkbox" class="filled-in" id="{{ categories }}" [value]="categories"
+                [checked]="hasCategory(categories)" [disabled]="!isCategoriesValid(categories)"
+                (change)="selectCategory($event, categories)" />
             </label>
           </p>
         </form>
-  
+
         <!-- Submit button -->
         <div class="divider"></div>
         <div class="section center">
-          <button type="submit"
-            class="waves-effect waves-light btn"
-            [disabled]="!artworkForm.form.valid">
+          <button type="submit" class="waves-effect waves-light btn" [disabled]="!artworkForm.form.valid">
             Valider</button>
         </div>
-  
+
       </div>
     </div>
   </div>

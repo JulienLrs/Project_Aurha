@@ -3,7 +3,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 14px;
     color: #000000;
-    
+
   }
 
   h1,
@@ -14,49 +14,55 @@
   h6 {
     margin: 8px 0;
   }
+
   .nav-wrapper {
     background-color: #d1d1d157;
   }
+
   .menu-button {
-    color:#000000;
+    color: #000000;
   }
+
   .brand-logo {
-    color:#000000;
+    color: #000000;
   }
+
   .dropdown-trigger {
-    color:#000000;
+    color: #000000;
   }
+
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
- 
-.card-image {
-  width: 200px;
-  height: 200px;
-}
-.card-horizontal {
-  box-shadow: 0 8px 8px 8px rgba(207, 207, 207, 0.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
-}
+
+  .card-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card-horizontal {
+    box-shadow: 0 8px 8px 8px rgba(207, 207, 207, 0.2), 0 8px 8px 0 rgba(0, 0, 0, .14), 0 8px 8px 0 rgba(0, 0, 0, .12) !important;
+  }
 </style>
 
 <!-- NAVBAR -->
 
 <script>
   $('.dropdown-trigger').dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrain_width: false, // Does not change width of dropdown to that of the activator
-      hover: false, // Activate on hover
-      gutter: 3, // Spacing from edge
-      belowOrigin: false, // Displays dropdown below the button
-      alignment: 'left' // Displays dropdown with edge aligned to the left of button
-    }
+    inDuration: 300,
+    outDuration: 225,
+    constrain_width: false, // Does not change width of dropdown to that of the activator
+    hover: false, // Activate on hover
+    gutter: 3, // Spacing from edge
+    belowOrigin: false, // Displays dropdown below the button
+    alignment: 'left' // Displays dropdown with edge aligned to the left of button
+  }
   );
-  </script>
+</script>
 
-  
+
 <nav class="nav-wrapper">
   <div>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
@@ -83,20 +89,15 @@
   <li><a href="#!">About</a></li>
   <li><a href="#!">Contact</a></li>  
 </ul> -->
-<router-outlet> 
+<router-outlet>
 </router-outlet>
 
-  
-  
 
-  
-  
-  
-  
-  
 
-  <!-- LINKS-->
-  <!-- <div class="card-container">
+
+
+<!-- LINKS-->
+<!-- <div class="card-container">
     <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/find/?keywords=angular"
       target="_blank" rel="noopener">
       <svg xmlns="http://www.w3.org/2000/svg" width="24.607" height="23.447" viewBox="0 0 24.607 23.447">
@@ -107,5 +108,3 @@
       </svg>
     </a>
   </div> -->
-
-
