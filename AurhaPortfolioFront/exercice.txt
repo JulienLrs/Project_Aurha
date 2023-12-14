@@ -1,1 +1,9 @@
-Test de création de conflit 
+<<<<<<< HEAD
+Exercice 1 : Git
+Test de commit 
+Attention aux erreurs
+=======
+Exercice 1 : Git
+Test de commit 
+Attention aux erreurs 
+>>>>>>> exercice1
